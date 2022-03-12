@@ -70,6 +70,8 @@ def createProduct(request):
     serializer = ProductSerializer(product, many=False)
     return Response(serializer.data)
 
+    # update product in edit screen
+
 @api_view(['PUT'])
 @permission_classes([IsAdminUser])
 def updateProduct(request, pk):
@@ -96,7 +98,7 @@ def deleteProduct(request, pk):
     product.delete()
     return Response('Producted Deleted')
 
-
+# to handel images
 @api_view(['POST'])
 def uploadImage(request):
     data = request.data
