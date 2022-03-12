@@ -69,6 +69,7 @@ def getUserProfile(request):
     serializer = UserSerializer(user, many=False)
     return Response(serializer.data)
 
+#git user by admin
 
 @api_view(['GET'])
 @permission_classes([IsAdminUser])
